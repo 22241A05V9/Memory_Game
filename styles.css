@@ -1,0 +1,90 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    background-image: url('http://wallpapercave.com/wp/xgrRFIA.jpg');
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    position: relative; /* Required for absolute positioning of images */
+    }
+  
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 10px;
+    width: 420px;
+    margin: 20px auto;
+  }
+  
+  .card {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    perspective: 1000px;
+    cursor: pointer;
+    border: 1px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    background-color: #3498db;
+    color: #fff;
+  }
+  
+  .front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    backface-visibility: hidden;
+    transition: transform 0.5s ease;
+  }
+  
+  .front {
+    background-color: #fff;
+    color: #000;
+    transform: rotateY(180deg);
+  }
+  
+  .back {
+    background-color: #3498db;
+    color: #fff;
+    transform: rotateY(0);
+  }
+  
+  .card.flipped .front {
+    transform: rotateY(0);
+  }
+  
+  .card.flipped .back {
+    transform: rotateY(180deg);
+  }
+  
+  .card.matched {
+    visibility: hidden;
+  }
+  
+  #info {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  #info div {
+    margin-bottom: 10px;
+  }
+  #reset-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }  
